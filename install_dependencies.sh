@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo apt-get --assume-yes install ros-indigo-ur-description ros-indigo-geometry-msgs ros-indigo-move-base ros-indigo-twist-mux ros-indigo-controller-manager ros-indigo-joint-state-controller ros-indigo-diff-drive-controller ros-indigo-interactive-marker-twist-server ros-indigo-controller-manager libsdformat1 ros-indigo-gazebo-ros ros-indigo-gazebo-plugins ros-indigo-hector-gazebo-plugins ros-indigo-gazebo-ros-control ros-indigo-dwa-local-planner ros-indigo-teleop-twist-keyboard

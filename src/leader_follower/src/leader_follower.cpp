@@ -36,6 +36,7 @@ public:
     z = c1*s2*c3 - s1*c2*s3;
   }
 };
+
 class Follower
 {
 private:
