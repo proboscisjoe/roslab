@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="laser_enabled" default="true"/>
+  <arg name="ur5_enabled" default="false"/>
+  <arg name="kinect_enabled" default="false"/>
+  <arg name="name_space" default="mora"/>
+  <arg name="initial_pose" default="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
+
+  <group ns="husky_leader">
+    <param name="tf_prefix" value="husky_leader" />
+
+    <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+      <arg name="name_space" value="husky_leader"/>
+      <arg name="laser_enabled" value="$(arg laser_enabled)"/>
+      <arg name="ur5_enabled" value="$(arg ur5_enabled)"/>
+      <arg name="kinect_enabled" value="$(arg kinect_enabled)"/>
+      <arg name="initial_pose" value="$(arg initial_pose)"/>
+      
+      <!--arg name="initial_pose" value="-x -8.1024 -y 6.47 -z 0.244929 -R 3e-06 -P 1e-06 -Y -1.5881"/-->
+    </include>
+
+    <include file="$(find husky_navigation)/launch/move_base.launch">
+      <arg name="name_space" value="husky_leader"/>
+    </include>
+
+    <include file="$(find husky_navigation)/launch/amcl.launch">
+      <arg name="name_space" value="husky_leader"/>
+    </include>
+
+    <!--include file="$(find mora_husky_sim_02)/husky_navigation/launch/gmapping.launch">
+      <arg name="name_space" value="husky_leader"/>
+    </include-->
+  </group>
+
+</launch>

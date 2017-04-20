@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: geographic_msgs
+Description: Description of geographic_msgs
+Version: 0.4.0
+Cflags: 
+Libs: -L/home/uadmin/roslab/devel/lib 
+Requires: 

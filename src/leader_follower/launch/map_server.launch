@@ -1,0 +1,5 @@
+<launch>
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find husky_navigation)/maps/playpen_map.yaml"/>
+  <node name="mora_map_server" pkg="mora_map_server" type="mora_map_server" args="$(arg map_file)"/>
+</launch>

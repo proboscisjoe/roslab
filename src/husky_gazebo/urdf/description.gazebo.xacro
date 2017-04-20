@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="husky_robot_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="laser_enabled" default="true" />
+  <xacro:arg name="ur5_enabled" default="false" />
+  <xacro:arg name="kinect_enabled" default="false" />
+
+  <xacro:include filename="$(find husky_description)/urdf/husky.urdf.xacro" />
+  <xacro:include filename="$(find husky_gazebo)/urdf/husky.gazebo.xacro" />
+
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>$(arg name_space)</robotNamespace>
+      <robotParam>robot_description</robotParam>
+    </plugin>
+  </gazebo>
+
+  <xacro:husky_robot />
+
+  <xacro:husky_robot_gazebo />
+
+</robot>

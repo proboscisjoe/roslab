@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: mora_husky_robot_localization
+Description: Description of mora_husky_robot_localization
+Version: 2.2.2
+Cflags: -I/home/uadmin/roslab/devel/include -I/home/uadmin/roslab/src/mora_husky_robot_localization/include
+Libs: -L/home/uadmin/roslab/devel/lib -lekf -lfilter_base -lfilter_utilities -lnavsat_transform -lros_filter -lros_filter_utilities -lukf
+Requires: cmake_modules diagnostic_msgs diagnostic_updater geographic_msgs geometry_msgs message_filters message_runtime nav_msgs roscpp sensor_msgs std_msgs tf2 tf2_geometry_msgs tf2_ros

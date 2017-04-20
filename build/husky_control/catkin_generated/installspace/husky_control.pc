@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/install
+
+Name: husky_control
+Description: Description of husky_control
+Version: 0.2.7
+Cflags: 
+Libs: -L/home/uadmin/roslab/install/lib 
+Requires: 

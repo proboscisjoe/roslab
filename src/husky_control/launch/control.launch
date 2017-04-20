@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="name_space" default="mora"/>
+
+  <rosparam command="load" file="$(find husky_control)/config/control.yaml" />
+
+  <param name="husky_velocity_controller/base_frame_id" value="/$(arg name_space)/base_link" />
+  <param name="husky_velocity_controller/odom_frame_id" value="/$(arg name_space)/odom" />
+
+  <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="husky_joint_publisher husky_velocity_controller --shutdown-timeout 3">
+    <remap from="husky_joint_publisher" to="/husky_joint_publisher"/>
+    <remap from="husky_velocity_controller" to="/husky_velocity_controller"/>
+  </node>
+
+  <node pkg="mora_husky_robot_localization" type="ekf_localization_node" name="ekf_localization">
+    <rosparam command="load" file="$(find husky_control)/config/localization.yaml" />
+    <!--param name="map_frame" value="/map"/-->
+    <param name="odom_frame" value="/$(arg name_space)/odom" />
+    <param name="base_link_frame" value="/$(arg name_space)/base_link" />
+    <param name="world_frame" value="/$(arg name_space)/odom" />
+    <param name="odom0" value="/$(arg name_space)/husky_velocity_controller/odom" />
+    <param name="imu0" value="/$(arg name_space)/imu/data" />
+  </node>
+
+  <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen" />
+
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find husky_control)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="husky_velocity_controller/cmd_vel"/>
+  </node>
+
+</launch>

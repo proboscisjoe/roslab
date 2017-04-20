@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="world_name" default="worlds/clearpath_playpen.world"/>
+
+  <arg name="laser_enabled" default="true"/>
+  <arg name="ur5_enabled" default="false"/>
+  <arg name="kinect_enabled" default="false"/>
+  <arg name="name_space" default="mora"/>
+  <arg name="initial_pose" default="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- world_name is wrt GAZEBO_RESOURCE_PATH environment variable -->
+    <arg name="world_name" value="$(find leader_follower)/$(arg world_name)"/> 
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!--include file="$(find mora_husky_sim_02)/launch/map_server_env_02.launch" /-->
+
+  <!--include file="$(find mora_husky_sim_02)/launch/husky_leader.launch" />
+  <include file="$(find mora_husky_sim_02)/launch/husky_follower.launch" /-->
+
+</launch>

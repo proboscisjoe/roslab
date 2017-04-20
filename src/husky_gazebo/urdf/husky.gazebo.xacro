@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="husky_robot_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find husky_gazebo)/urdf/accessories/kinect_camera.gazebo.xacro"/>
+
+  <xacro:macro name="husky_robot_gazebo">
+
+    <gazebo>
+      <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
+        <robotNamespace>$(arg name_space)</robotNamespace>
+        <robotParam>/robot_description</robotParam>
+        <updateRate>50.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <frameId>/$(arg name_space)/base_link</frameId>
+        <topicName>imu/data</topicName>
+        <accelDrift>0.005 0.005 0.005</accelDrift>
+        <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+        <rateDrift>0.005 0.005 0.005 </rateDrift>
+        <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+        <headingDrift>0.005</headingDrift>
+        <headingGaussianNoise>0.005</headingGaussianNoise>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+        <updateRate>40</updateRate>
+        <robotNamespace>$(arg name_space)</robotNamespace>
+        <robotParam>/robot_description</robotParam>
+        <bodyName>base_link</bodyName>
+        <frameId>$(arg name_space)/base_link</frameId>
+        <topicName>navsat/fix</topicName>
+        <velocityTopicName>navsat/vel</velocityTopicName>
+        <referenceLatitude>49.9</referenceLatitude>
+        <referenceLongitude>8.9</referenceLongitude>
+        <referenceHeading>0</referenceHeading>
+        <referenceAltitude>0</referenceAltitude>
+        <drift>0.0001 0.0001 0.0001</drift>
+      </plugin>
+    </gazebo>
+  
+    <xacro:if value="$(arg ur5_enabled)">
+      <!--Remove when https://github.com/ros-industrial/universal_robot/pull/168 is resolved -->
+      <gazebo reference="ur5_arm_shoulder_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_upper_arm_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_forearm_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_wrist_1_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_wrist_3_link">
+       <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_wrist_2_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="ur5_arm_ee_link">
+        <selfCollide>true</selfCollide>
+      </gazebo>
+    </xacro:if>
+
+    <xacro:if value="$(arg kinect_enabled)">
+      <xacro:kinect_camera_gazebo prefix="camera"/>
+    </xacro:if>
+
+  </xacro:macro>
+
+</robot>
+

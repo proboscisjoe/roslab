@@ -1,0 +1,22 @@
+digraph G {
+"husky_leader/base_link" -> "husky_leader/base_footprint"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/odom" -> "husky_leader/base_link"[label="Broadcaster: /husky_leader/ekf_localization\nAverage rate: 46.389 Hz\nMost recent transform: 1893.520 ( 0.010 sec old)\nBuffer length: 3.600 sec\n"];
+"husky_leader/base_laser_mount" -> "husky_leader/base_laser"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/top_plate_link" -> "husky_leader/base_laser_mount"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/front_bumper_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/imu_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/inertial_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/top_plate_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/rear_bumper_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/top_chassis_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/user_rail_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.275 Hz\nMost recent transform: 1894.030 ( -0.500 sec old)\nBuffer length: 3.640 sec\n"];
+"husky_leader/base_link" -> "husky_leader/front_left_wheel_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.276 Hz\nMost recent transform: 1893.510 ( 0.020 sec old)\nBuffer length: 3.620 sec\n"];
+"husky_leader/base_link" -> "husky_leader/front_right_wheel_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.276 Hz\nMost recent transform: 1893.510 ( 0.020 sec old)\nBuffer length: 3.620 sec\n"];
+"husky_leader/base_link" -> "husky_leader/rear_left_wheel_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.276 Hz\nMost recent transform: 1893.510 ( 0.020 sec old)\nBuffer length: 3.620 sec\n"];
+"husky_leader/base_link" -> "husky_leader/rear_right_wheel_link"[label="Broadcaster: /husky_leader/robot_state_publisher\nAverage rate: 50.276 Hz\nMost recent transform: 1893.510 ( 0.020 sec old)\nBuffer length: 3.620 sec\n"];
+"map" -> "husky_leader/odom"[label="Broadcaster: /husky_leader/amcl\nAverage rate: 12.023 Hz\nMost recent transform: 1894.290 ( -0.760 sec old)\nBuffer length: 3.410 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1893.530"[ shape=plaintext ] ;
+ }->"map";
+}

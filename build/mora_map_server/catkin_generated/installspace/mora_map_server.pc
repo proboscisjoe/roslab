@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/install
+
+Name: mora_map_server
+Description: Description of mora_map_server
+Version: 1.12.7
+Cflags: -I/home/uadmin/roslab/install/include
+Libs: -L/home/uadmin/roslab/install/lib -limage_loader
+Requires: roscpp tf nav_msgs

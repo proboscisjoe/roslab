@@ -1,0 +1,9 @@
+<library path="lib/libmora_husky_diff_drive_controller">
+
+  <class name="mora_husky_diff_drive_controller/MoraHuskyDiffDriveController" type="mora_husky_diff_drive_controller::MoraHuskyDiffDriveController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The MoraHuskyDiffDriveController tracks velocity commands. It expects 2 VelocityJointInterface type of hardware interfaces.
+    </description>
+  </class>
+
+</library>

@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: ur_description
+Description: Description of ur_description
+Version: 1.1.9
+Cflags: 
+Libs: -L/home/uadmin/roslab/devel/lib 
+Requires: 

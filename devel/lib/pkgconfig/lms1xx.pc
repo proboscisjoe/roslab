@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: lms1xx
+Description: Description of lms1xx
+Version: 0.1.5
+Cflags: 
+Libs: -L/home/uadmin/roslab/devel/lib 
+Requires: 

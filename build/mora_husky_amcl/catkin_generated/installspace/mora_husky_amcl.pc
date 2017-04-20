@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/install
+
+Name: mora_husky_amcl
+Description: Description of mora_husky_amcl
+Version: 1.12.7
+Cflags: -I/home/uadmin/roslab/install/include
+Libs: -L/home/uadmin/roslab/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: roscpp dynamic_reconfigure tf

@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: husky_base
+Description: Description of husky_base
+Version: 0.2.5
+Cflags: 
+Libs: -L/home/uadmin/roslab/devel/lib 
+Requires: 

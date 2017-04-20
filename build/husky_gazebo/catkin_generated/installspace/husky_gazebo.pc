@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/install
+
+Name: husky_gazebo
+Description: Description of husky_gazebo
+Version: 0.2.5
+Cflags: 
+Libs: -L/home/uadmin/roslab/install/lib 
+Requires: 

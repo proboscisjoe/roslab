@@ -1,0 +1,8 @@
+prefix=/home/uadmin/roslab/devel
+
+Name: leader_follower
+Description: Description of leader_follower
+Version: 0.0.0
+Cflags: -I/home/uadmin/roslab/src/leader_follower/include
+Libs: -L/home/uadmin/roslab/devel/lib 
+Requires: roscpp std_msgs move_base_msgs actionlib

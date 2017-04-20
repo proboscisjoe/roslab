@@ -1,0 +1,2 @@
+husky_base:husky_control:husky_description:husky_gazebo:husky_navigation:leader_follower:lms1xx:mora_husky_amcl:mora_husky_diff_drive_controller:mora_husky_robot_localization:mora_map_server:ur_description
+-DCATKIN_DEVEL_PREFIX=/home/uadmin/roslab/devel -DCMAKE_INSTALL_PREFIX=/home/uadmin/roslab/install -G Unix Makefiles
